@@ -2,7 +2,7 @@ class Main {
   public static void main(String[] args) {
     
     // Create a new, empty linked list
-    nums_list = new nums_list;
+    IntList nums_list = new IntList();
 
     // Append values to list
     nums_list.append(10);
