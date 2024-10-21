@@ -12,18 +12,31 @@ public class IntList {
   }
 
   // ** TO COMPLETE **
-  public void append(int new_value) {
-    // Copy from Practicum 30
+  public void append(Integer new_value) {
+    IntNode n = new IntNode(new_value, null); // Create a new node with null next pointer
+  
+    if (head == null) {
+      head = n; // If list is empty, make the new node the head
+    } else {
+      IntNode tempPtr = head;
+      while (tempPtr.getNext() != null) {
+        tempPtr = tempPtr.getNext();
+      }
+      tempPtr.setNext(n); // Set the next pointer of the last node to the new node
+    }
+  }
 
   // ** TO COMPLETE **
-  public void delete(int value) throws NoSuchValueException,
-                                       EmptyListException {
-    // Check if list empty. If so, make first node.
-    if(head == null)
-      throw new EmplyListExceptino();
+  public void delete(int value) throws NoSuchValueException, EmptyListException {
+    if (head == null) {
+      throw new EmptyListException();
+    }
 
-    // if not empty, delete value from linked list
-    // if not in list, throw NoSuchValueException
+    // Case 1: Deleting the head node
+    if (head.getValue() == value) {
+      head = head.getNext();
+      return;
+    }
 
 
     
