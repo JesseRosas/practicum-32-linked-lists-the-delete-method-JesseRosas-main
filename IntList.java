@@ -37,6 +37,22 @@ public class IntList {
       head = head.getNext();
       return;
     }
+     // Case 1: Deleting the head node
+     if (head.getValue() == value) {
+      head = head.getNext();
+      return;
+    }
+
+    // Case 2: Deleting a node somewhere in the middle or end
+    IntNode current = head;
+    IntNode previous = null;
+
+    while (current != null && current.getValue() != value) {
+      previous = current;
+      current = current.getNext();
+    }
+
+
 
 
     
